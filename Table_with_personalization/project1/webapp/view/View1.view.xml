@@ -1,0 +1,54 @@
+<mvc:View
+    controllerName="project1.controller.View1"
+    height="100%"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.f"
+    xmlns:mdc="sap.ui.mdc"
+    xmlns:mdct="sap.ui.mdc.table">
+
+    <f:DynamicPage id="page" headerExpanded="true">
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title text="Montagne del Mondo (MDC Table)"/>
+                </f:heading>
+            </f:DynamicPageTitle>
+        </f:title>
+        <f:content>
+            <mdc:Table
+                id="table"
+                p13nMode="Column,Sort"
+                type="ResponsiveTable"
+                delegate="{
+                    name: 'project1/delegates/JSONTableDelegate'
+                }">
+                <mdct:Column
+                    propertyKey="name"
+                    header="Name">
+                    <Text text="{mountains>name}"/>
+                </mdct:Column>
+
+                <mdct:Column
+                    propertyKey="range"
+                    header="Range">
+                    <Text text="{mountains>range}"/>
+                </mdct:Column>
+
+                <mdct:Column
+                    propertyKey="first_ascent"
+                    header="First Ascent">
+                    <Text text="{mountains>first_ascent}"/>
+                </mdct:Column>
+
+                 <mdct:Column
+                    propertyKey="countries"
+                    header="Countries">
+                    <Text text="{mountains>countries}"/>
+                </mdct:Column>
+
+            </mdc:Table>
+        </f:content>
+    </f:DynamicPage>
+</mvc:View>

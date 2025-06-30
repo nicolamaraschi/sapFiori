@@ -1,0 +1,38 @@
+[
+    {
+      "rank": 1,
+      "name": "Monte Everest",
+      "height": 8848,
+      "range": "Himalaya",
+      "parent_mountain": "Nessuno",
+      "first_ascent": 1953,
+      "countries": "Nepal, Cina"
+    },
+    {
+      "rank": 2,
+      "name": "K2",
+      "height": 8611,
+      "range": "Karakoram",
+      "parent_mountain": "Monte Everest",
+      "first_ascent": 1954,
+      "countries": "Pakistan, Cina"
+    },
+    {
+      "rank": 3,
+      "name": "Monte Bianco",
+      "height": 4808,
+      "range": "Alpi",
+      "parent_mountain": "Nessuno",
+      "first_ascent": 1786,
+      "countries": "Francia, Italia"
+    },
+    {
+      "rank": 4,
+      "name": "Cervino",
+      "height": 4478,
+      "range": "Alpi",
+      "parent_mountain": "Monte Bianco",
+      "first_ascent": 1865,
+      "countries": "Svizzera, Italia"
+    }
+]
