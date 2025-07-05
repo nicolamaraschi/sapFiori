@@ -61,37 +61,48 @@
       ]
     },
     "routing": {
-	  "config": {
-		"routerClass": "sap.m.routing.Router",
-		"type": "View",
-		"viewType": "XML",
-		"path": "ui5.walkthrough.view",
-		"controlId": "app",
-		"controlAggregation": "pages"
-	  },
-	  "routes": [
-		{
-		  "pattern": "",
-		  "name": "overview",
-		  "target": "overview"
-		},
-		{
-		  "pattern": "detail/{invoicePath}",
-		  "name": "detail",
-		  "target": "detail"
-		}
-	  ],
-		  "targets": {
-		"overview": {
-		  "id": "overview",
-		  "name": "Overview"
-		},
-		"detail": {
-		  "id": "detail",
-		  "name": "Detail"
-		}
-	  }
+  "config": {
+    "routerClass": "sap.m.routing.Router",
+    "viewType": "XML",
+    "async": true,
+    "viewPath": "project1.view",
+    "controlAggregation": "pages",
+    "controlId": "app",
+    "clearControlAggregation": false
+  },
+  "routes": [
+    {
+      "name": "RouteView1",
+      "pattern": "",
+      "target": [
+        "TargetView1"
+      ]
     },
+    {
+      "name": "RouteView2",
+      "pattern": "View2/{inputValue}",
+      "target": [
+        "TargetView2"
+      ]
+    }
+  ],
+  "targets": {
+    "TargetView1": {
+      "viewType": "XML",
+      "transition": "slide",
+      "clearControlAggregation": false,
+      "viewId": "View1",
+      "viewName": "View1"
+    },
+    "TargetView2": {
+      "viewType": "XML",
+      "transition": "slide",
+      "clearControlAggregation": false,
+      "viewId": "View2",
+      "viewName": "View2"
+    }
+  }
+},
     "rootView": {
       "viewName": "project1.view.App",
       "type": "XML",

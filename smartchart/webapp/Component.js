@@ -4,7 +4,7 @@ sap.ui.define([
 ], (UIComponent, models) => {
     "use strict";
 
-    return UIComponent.extend("project1.Component", {
+    return UIComponent.extend("smartchart.Component", {
         metadata: {
             manifest: "json",
             interfaces: [

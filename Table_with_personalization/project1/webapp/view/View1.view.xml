@@ -21,7 +21,7 @@
                 id="table"
                 p13nMode="Column,Sort"
                 type="ResponsiveTable"
-                delegate="{
+                delegate="{project1.view.View1project1.view.View1project1.view.View1
                     name: 'project1/delegates/JSONTableDelegate'
                 }">
                 <mdct:Column

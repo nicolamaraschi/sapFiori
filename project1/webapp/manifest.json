@@ -1,0 +1,83 @@
+{
+	"sap.app": {
+		"id": "project1",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "My Fiori App",
+		"dataSources": {
+			"mainService": {
+				"uri": "/v3/northwind/northwind.svc/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			}
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "project1.view.App",
+			"type": "XML",
+			"async": true,
+			"id": "app"
+		},
+		"dependencies": {
+			"minUI5Version": "1.60.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "project1.i18n.i18n"
+				}
+			},
+			"": {
+				"dataSource": "mainService",
+				"preload": true,
+				"settings": {
+					"tokenHandling": false,
+					"json": true
+				}
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "project1.view",
+				"controlAggregation": "pages",
+				"controlId": "app",
+				"clearControlAggregation": false
+			},
+			"routes": [
+				{
+					"name": "RouteView1",
+					"pattern": "",
+					"target": "TargetView1"
+				},
+				{
+					"name": "detail",
+					"pattern": "products/{productID}",
+					"target": "TargetView2"
+				}
+			],
+			"targets": {
+				"TargetView1": {
+					"viewName": "View1"
+				},
+				"TargetView2": {
+					"viewName": "View2"
+				}
+			}
+		}
+	}
+}

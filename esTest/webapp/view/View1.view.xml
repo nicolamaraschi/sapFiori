@@ -1,0 +1,18 @@
+<mvc:View
+    controllerName="project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="idView1Page" title="View 1">
+        <content>
+            <VBox id="idView1VBox" class="sapUiSmallMargin">
+                <Label id="idView1Label" text="Dato da passare:" />
+                <Input id="idView1Input" width="300px" />
+                <Button
+                    id="idNavButton"
+                    text="Vai a View 2 e passa il dato"
+                    press=".onNavToView2"
+                    class="sapUiSmallMarginTop" />
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

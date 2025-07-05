@@ -5,7 +5,7 @@ sap.ui.define([
 
     return Controller.extend("project1.controller.View1", {
         onInit() {
-           
+         debugger  ;
         }
     });
 });

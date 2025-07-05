@@ -1,6 +1,28 @@
-<mvc:View controllerName="project1.controller.View1"
-    xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-    </Page>
+<mvc:View
+	controllerName="tuo.namespace.progetto.controller.View1"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:smartchart="sap.ui.comp.smartchart"
+	xmlns:sl="sap.ui.comp.navpopover"
+	xmlns:data="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	xmlns="sap.m"
+	height="100%">
+
+	<VBox fitContainer="true">
+		<smartchart:SmartChart id="smartChartGeneral"
+			enableAutoBinding="true"
+			entitySet="ProductCollection"
+			useVariantManagement="false"
+			persistencyKey="PKeyChartExample"
+			useChartPersonalisation="true"
+			header="Products Chart"
+			showFullScreenButton="true"
+			selectionMode="Multi"
+			showChartTooltip="true"
+			showDrillBreadcrumbs="true"
+			showDetailsButton="true"
+			showDrillButtons="true"
+			height="100%">
+		</smartchart:SmartChart>
+	</VBox>
+
 </mvc:View>
