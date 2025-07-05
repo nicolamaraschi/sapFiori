@@ -1,0 +1,24 @@
+<mvc:View controllerName="project2.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form">
+    <Page id="detailPage" title="Product Detail" showNavButton="true" navButtonPress=".onNavBack">
+        <ObjectHeader
+            id="objectHeader"
+            title="{Name}"/>
+        <VBox class="sapUiSmallMargin">
+            <f:SimpleForm id="SimpleFormDisplay354"
+                editable="false"
+                layout="ResponsiveGridLayout">
+                <f:content>
+                    <Label text="Product ID"/>
+                    <Text text="{ProductID}"/>
+                    <Label text="Supplier ID"/>
+                    <Text text="{SupplierID}"/>
+                    <Label text="Category ID"/>
+                    <Text text="{CategoryID}"/>
+                </f:content>
+            </f:SimpleForm>
+        </VBox>
+    </Page>
+</mvc:View>

@@ -1,27 +1,59 @@
 {
+    "_version": "1.49.0",
     "sap.app": {
         "id": "project2",
         "type": "application",
         "i18n": "i18n/i18n.properties",
         "applicationVersion": {
-            "version": "1.0.0"
+            "version": "0.0.1"
         },
-        "title": "{{appTitle}}"
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:basic",
+            "version": "1.9.3",
+            "toolsId": "b1a1354a-a704-464a-b565-5163a7a3b35f"
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "/v3/northwind/northwind.svc/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "localUri": "localService/metadata.xml",
+                    "annotations": []
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
     },
     "sap.ui5": {
         "flexEnabled": false,
-        "rootView": {
-            "viewName": "project2.view.App",
-            "type": "XML",
-            "async": true,
-            "id": "app"
-        },
         "dependencies": {
-            "minUI5Version": "1.60.0",
-            "libs": {
-                "sap.ui.core": {},
-                "sap.m": {}
-            }
+            "minUI5Version": "1.114.0",
+           "libs": {
+            "sap.m": {},
+            "sap.ui.core": {},
+            "sap.f": {},
+            "sap.ui.layout": {},
+            "sap.viz": {}
+        }
         },
         "contentDensities": {
             "compact": true,
@@ -40,6 +72,12 @@
                 "settings": {}
             }
         },
+        "rootView": {
+            "viewName": "project2.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "App"
+        },
         "routing": {
             "config": {
                 "routerClass": "sap.m.routing.Router",
@@ -53,9 +91,16 @@
             "routes": [
                 {
                     "name": "RouteView1",
-                    "pattern": "",
+                    "pattern": ":?query:",
                     "target": [
                         "TargetView1"
+                    ]
+                },
+                {
+                    "name": "RouteView2",
+                    "pattern": "Products/{productId}",
+                    "target": [
+                        "TargetView2"
                     ]
                 }
             ],
@@ -64,34 +109,17 @@
                     "viewType": "XML",
                     "transition": "slide",
                     "clearControlAggregation": false,
+                    "viewId": "View1",
                     "viewName": "View1"
+                },
+                "TargetView2": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "View2",
+                    "viewName": "View2"
                 }
             }
-        },
-        "resources": {
-            "css": [
-                {
-                    "uri": "css/style.css"
-                }
-            ]
         }
-    },
-    "sap.app": {
-		"id": "project2",
-		"type": "application",
-		"i18n": "i18n/i18n.properties",
-		"applicationVersion": {
-			"version": "1.0.0"
-		},
-		"title": "{{appTitle}}",
-		"dataSources": {
-			"mainService": {
-				"uri": "/v3/northwind/northwind.svc/",
-				"type": "OData",
-				"settings": {
-					"odataVersion": "2.0"
-				}
-			}
-		}
-	}
+    }
 }

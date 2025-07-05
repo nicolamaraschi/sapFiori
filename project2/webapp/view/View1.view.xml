@@ -1,55 +1,35 @@
-<mvc:View controllerName="project2.controller.View1"
+<mvc:View
+    controllerName="project2.controller.View1"
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
+    xmlns="sap.m"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:viz.data="sap.viz.ui5.data"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds">
+    <Page id="page" title="Product Prices">
         <content>
-            <Table
-                id="productsTable"
-                inset="false"
-                items="{productsModel>/}">
-                <headerToolbar>
-                    <Toolbar>
-                        <Title text="Products from Northwind" level="H2"/>
-                    </Toolbar>
-                </headerToolbar>
+            <viz:VizFrame
+                id="idVizFrame"
+                uiConfig="{applicationSet:'fiori'}"
+                vizType='column'
+                width="100%"
+                height="100%">
+                <viz:dataset>
+                    <viz.data:FlattenedDataset data="{/Products}">
+                        <viz.data:dimensions>
+                            <viz.data:DimensionDefinition name="Product" value="{ProductName}" />
+                        </viz.data:dimensions>
+                        <viz.data:measures>
+                            <viz.data:MeasureDefinition name="Price" value="{UnitPrice}" />
+                        </viz.data:measures>
+                    </viz.data:FlattenedDataset>
+                </viz:dataset>
 
-                <columns>
-                    <Column>
-                        <Text text="Product Name" />
-                    </Column>
-                    <Column minScreenWidth="Tablet" demandPopin="true">
-                        <Text text="Quantity Per Unit" />
-                    </Column>
-                    <Column minScreenWidth="Tablet" demandPopin="true" hAlign="End">
-                        <Text text="Units In Stock" />
-                    </Column>
-                    <Column hAlign="End">
-                        <Text text="Price" />
-                    </Column>
-                </columns>
-
-                <items>
-                    <ColumnListItem vAlign="Middle">
-                        <cells>
-                            <Text text="{productsModel>ProductName}" />
-                            <Text text="{productsModel>QuantityPerUnit}" />
-                            <ObjectNumber number="{productsModel>UnitsInStock}" />
-                            <ObjectNumber
-                                number="{
-                                    parts:[{path:'productsModel>UnitPrice'}],
-                                    type: 'sap.ui.model.type.Float',
-                                    formatOptions: {
-                                        style: 'currency',
-                                        currency: 'USD',
-                                        currencyCode: false
-                                    }
-                                }"
-                                unit="USD" />
-                        </cells>
-                    </ColumnListItem>
-                </items>
-            </Table>
+                <viz:feeds>
+                    <viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Price" />
+                    <viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Product" />
+                </viz:feeds>
+            </viz:VizFrame>
         </content>
     </Page>
 </mvc:View>
