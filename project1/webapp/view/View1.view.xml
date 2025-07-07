@@ -13,6 +13,8 @@
                         <Title text="Products from Northwind" level="H2"/>
                         <ToolbarSpacer/>
                         <SearchField width="50%" search=".onSearch"/>
+                        <Button icon="sap-icon://sort" press=".onSort" />
+                        <Button icon="sap-icon://group-2" press=".onGroup" />
                     </Toolbar>
                 </headerToolbar>
                 <columns>

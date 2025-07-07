@@ -55,6 +55,50 @@ sap.ui.define([
 					MessageBox.information("No products found.");
 				}
 			});
+		},
+
+		onSort: function () {
+			this._openViewSettingsDialog("Sort");
+		},
+
+		onGroup: function () {
+			this._openViewSettingsDialog("Group");
+		},
+
+		_openViewSettingsDialog: function (sDialogTab) {
+			var oView = this.getView();
+
+			if (!this.byId("viewSettingsDialog")) {
+				sap.ui.core.Fragment.load({
+					id: oView.getId(),
+					name: "project1.view.SortAndGroupDialog",
+					controller: this
+				}).then(function (oDialog) {
+					oView.addDependent(oDialog);
+					oDialog.open(sDialogTab);
+				});
+			} else {
+				this.byId("viewSettingsDialog").open(sDialogTab);
+			}
+		},
+
+		onConfirmViewSettings: function (oEvent) {
+			var aSorters = [];
+			var oBinding = this.byId("productsTable").getBinding("items");
+			var mParams = oEvent.getParameters();
+
+			if (mParams.groupItem) {
+				var sPath = mParams.groupItem.getKey();
+				var bDescending = mParams.groupDescending;
+				var oGroup = new sap.ui.model.Sorter(sPath, bDescending, true);
+				aSorters.push(oGroup);
+			}
+
+			var sPath = mParams.sortItem.getKey();
+			var bDescending = mParams.sortDescending;
+			aSorters.push(new sap.ui.model.Sorter(sPath, bDescending));
+			
+			oBinding.sort(aSorters);
 		}
 	});
 });
