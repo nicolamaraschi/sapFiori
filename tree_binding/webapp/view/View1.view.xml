@@ -1,0 +1,11 @@
+<mvc:View controllerName="treebinding.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <Tree
+            id="tree"
+            items="{path: 'treeModel>/'}">
+            <StandardTreeItem title="{treeModel>Name}" />
+        </Tree>
+    </Page>
+</mvc:View>
