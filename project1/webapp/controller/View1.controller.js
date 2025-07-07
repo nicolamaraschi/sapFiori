@@ -36,6 +36,25 @@ sap.ui.define([
 			oRouter.navTo("detail", {
 				productID: sProductId 
 			});
+		},
+
+		onSearch: function (oEvent) {
+			var aFilters = [];
+			var sQuery = oEvent.getSource().getValue();
+			if (sQuery && sQuery.length > 0) {
+				var oFilter = new sap.ui.model.Filter("ProductName", sap.ui.model.FilterOperator.Contains, sQuery);
+				aFilters.push(oFilter);
+			}
+
+			var oTable = this.byId("productsTable");
+			var oBinding = oTable.getBinding("items");
+			oBinding.filter(aFilters, "Application");
+
+			oBinding.attachEventOnce("dataReceived", function () {
+				if (oBinding.getLength() === 0) {
+					MessageBox.information("No products found.");
+				}
+			});
 		}
 	});
 });

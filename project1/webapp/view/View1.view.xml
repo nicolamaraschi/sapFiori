@@ -11,6 +11,8 @@
                 <headerToolbar>
                     <Toolbar>
                         <Title text="Products from Northwind" level="H2"/>
+                        <ToolbarSpacer/>
+                        <SearchField width="50%" search=".onSearch"/>
                     </Toolbar>
                 </headerToolbar>
                 <columns>
