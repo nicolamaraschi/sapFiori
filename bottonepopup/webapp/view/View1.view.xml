@@ -1,6 +1,38 @@
-<mvc:View controllerName="bottonepopup.controller.View1"
+<mvc:View
+    controllerName="bottonepopup.controller.View1"
     xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
+        <content>
+            <Button
+                text="Apri Pop-up (Fragment)"
+                press=".onOpenDialog"
+                class="sapUiSmallMarginEnd"/>
+
+            <VBox class="sapUiSmallMarginTop">
+                <Title text="Esempi di MessageBox" class="sapUiSmallMarginBottom"/>
+                <Button
+                    text="Confirmation Box"
+                    press=".handleConfirmationMessageBoxPress"
+                    class="sapUiTinyMarginBottom"/>
+                <Button
+                    text="Error Box"
+                    press=".handleErrorMessageBoxPress"
+                    class="sapUiTinyMarginBottom"/>
+                <Button
+                    text="Warning Box"
+                    press=".handleWarningMessageBoxPress"
+                    class="sapUiTinyMarginBottom"/>
+                <Button
+                    text="Success Box"
+                    press=".handleSuccessMessageBoxPress"
+                    class="sapUiTinyMarginBottom"/>
+                <Button
+                    text="Info Box"
+                    press=".handleInfoMessageBoxPress"
+                    class="sapUiTinyMarginBottom"/>
+            </VBox>
+        </content>
     </Page>
 </mvc:View>

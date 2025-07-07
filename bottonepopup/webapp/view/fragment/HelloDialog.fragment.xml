@@ -1,0 +1,17 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Dialog
+        id="helloDialog"
+        title="Ciao Mondo">
+        <content>
+            <Text text="Questo è il tuo pop-up che funziona!" class="sapUiSmallMargin"/>
+        </content>
+        <beginButton>
+            <Button
+                text="Chiudi"
+                type="Emphasized"
+                press=".onCloseDialog"/>
+        </beginButton>
+    </Dialog>
+</core:FragmentDefinition>
