@@ -14,7 +14,7 @@ sap.ui.define([
 
 		_onObjectMatched: function (oEvent) {
 			const sProductId = oEvent.getParameter("arguments").productID;
-			const oTable = this.byId("orderDetailsTable");
+			const oTable = this.byId("idOrderDetailsTable");
 			const oBinding = oTable.getBinding("items");
 
 			const oFilter = new Filter("ProductID", FilterOperator.EQ, parseInt(sProductId));

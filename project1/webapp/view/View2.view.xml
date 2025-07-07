@@ -8,7 +8,7 @@
         navButtonPress=".onNavBack">
         <content>
             <Table
-                id="orderDetailsTable"
+                id="idOrderDetailsTable"
                 inset="false"
                 items="{/Order_Details}">
                 <headerToolbar>
