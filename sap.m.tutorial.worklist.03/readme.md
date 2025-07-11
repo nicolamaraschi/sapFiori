@@ -1,0 +1,1 @@
+ui5 serve -o test/mockServer.html
