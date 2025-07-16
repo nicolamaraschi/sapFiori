@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="Z_SD_SALESORDER_NM_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="SalesOrder" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="NumeroOrdine"/>
+                </Key>
+                <Property Name="ValoreNetto" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="2" sap:unicode="false" sap:label="Net Value" sap:filterable="false"/>
+                <Property Name="CodiceCliente" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Sold-to Party" sap:filterable="false"/>
+                <Property Name="TipoOrdine" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Sales Doc. Type" sap:filterable="false"/>
+                <Property Name="dataCreazione" Type="Edm.DateTime" Nullable="false" Precision="0" sap:unicode="false" sap:label="Created On" sap:filterable="false"/>
+                <Property Name="NumeroOrdine" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Sales Document" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="Z_SD_SALESORDER_NM_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="SalesOrderSet" EntityType="Z_SD_SALESORDER_NM_SRV.SalesOrder" sap:addressable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <atom:link rel="self" href="https://S4DEMO.HORSA.IT:44301/sap/opu/odata/sap/Z_SD_SALESORDER_NM_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://S4DEMO.HORSA.IT:44301/sap/opu/odata/sap/Z_SD_SALESORDER_NM_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

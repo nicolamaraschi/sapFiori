@@ -1,0 +1,36 @@
+<mvc:View controllerName="collegamentos4t.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <Table items="{salesOrderModel>/}">
+            <columns>
+                <Column>
+                    <Text text="Numero Ordine"/>
+                </Column>
+                <Column>
+                    <Text text="Data Creazione"/>
+                </Column>
+                <Column>
+                    <Text text="Tipo Ordine"/>
+                </Column>
+                <Column>
+                    <Text text="Codice Cliente"/>
+                </Column>
+                <Column>
+                    <Text text="Valore Netto"/>
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{salesOrderModel>NumeroOrdine}"/>
+                        <Text text="{path: 'salesOrderModel>dataCreazione', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium' }}"/>
+                        <Text text="{salesOrderModel>TipoOrdine}"/>
+                        <Text text="{salesOrderModel>CodiceCliente}"/>
+                        <Text text="{salesOrderModel>ValoreNetto}"/>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Page>
+</mvc:View>
