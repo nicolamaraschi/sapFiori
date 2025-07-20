@@ -2,7 +2,7 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
-        <Table items="{salesOrderModel>/}">
+        <Table items="{/SalesOrderSet}">
             <columns>
                 <Column>
                     <Text text="Numero Ordine"/>
@@ -21,13 +21,13 @@
                 </Column>
             </columns>
             <items>
-                <ColumnListItem>
+                <ColumnListItem type="Navigation" press=".onPress">
                     <cells>
-                        <Text text="{salesOrderModel>NumeroOrdine}"/>
-                        <Text text="{path: 'salesOrderModel>dataCreazione', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium' }}"/>
-                        <Text text="{salesOrderModel>TipoOrdine}"/>
-                        <Text text="{salesOrderModel>CodiceCliente}"/>
-                        <Text text="{salesOrderModel>ValoreNetto}"/>
+                        <Text text="{NumeroOrdine}"/>
+                        <Text text="{path: 'dataCreazione', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium' }}"/>
+                        <Text text="{TipoOrdine}"/>
+                        <Text text="{CodiceCliente}"/>
+                        <Text text="{ValoreNetto}"/>
                     </cells>
                 </ColumnListItem>
             </items>

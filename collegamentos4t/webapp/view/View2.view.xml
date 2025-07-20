@@ -1,0 +1,28 @@
+<mvc:View controllerName="collegamentos4t.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="Dettaglio Ordine {orderItemsModel>/NumeroOrdine}" showNavButton="true" navButtonPress=".onNavBack">
+        <Table items="{orderItemsModel>/results}">
+            <columns>
+                <Column>
+                    <Text text="Posizione"/>
+                </Column>
+                <Column>
+                    <Text text="Materiale"/>
+                </Column>
+                <Column>
+                    <Text text="Valore Netto"/>
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{orderItemsModel>Posizione}"/>
+                        <Text text="{orderItemsModel>Materiale}"/>
+                        <Text text="{orderItemsModel>ValoreNettoItem}"/>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Page>
+</mvc:View>
