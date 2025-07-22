@@ -104,6 +104,13 @@
           "target": [
             "TargetView2"
           ]
+        },
+        {
+          "name": "RouteCreateOrder",
+          "pattern": "create",
+          "target": [
+            "TargetCreateOrder"
+          ]
         }
       ],
       "targets": {
@@ -114,6 +121,11 @@
         "TargetView2": {
           "id": "View2",
           "name": "View2"
+        },
+        "TargetCreateOrder": {
+          "id": "CreateOrder",
+          "name": "CreateOrder",
+          "level": 2
         }
       }
     },

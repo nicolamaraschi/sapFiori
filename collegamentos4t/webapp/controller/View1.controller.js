@@ -10,6 +10,11 @@ sap.ui.define([
             oRouter.navTo("RouteView2", {
                 NumeroOrdine: oItem.getBindingContext().getProperty("NumeroOrdine")
             });
+        },
+
+        onNavToCreate: function () {
+            var oRouter = this.getOwnerComponent().getRouter();
+            oRouter.navTo("RouteCreateOrder");
         }
     });
 });

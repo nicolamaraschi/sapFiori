@@ -2,6 +2,9 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
+        <headerContent>
+            <Button text="Crea Ordine" press="onNavToCreate" type="Emphasized"/>
+        </headerContent>
         <Table items="{/SalesOrderSet}">
             <columns>
                 <Column>

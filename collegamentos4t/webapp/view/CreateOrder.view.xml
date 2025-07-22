@@ -1,0 +1,68 @@
+<mvc:View
+    controllerName="collegamentos4t.controller.CreateOrder"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+    <Page id="page" title="Crea Ordine" showNavButton="true" navButtonPress=".onNavBack">
+        <content>
+            <f:SimpleForm
+                editable="true"
+                layout="ResponsiveGridLayout"
+                labelSpanXL="3"
+                labelSpanL="3"
+                labelSpanM="3"
+                labelSpanS="12"
+                adjustLabelSpan="false"
+                emptySpanXL="4"
+                emptySpanL="4"
+                emptySpanM="4"
+                emptySpanS="0"
+                columnsXL="1"
+                columnsL="1"
+                columnsM="1"
+                singleContainerFullSize="false">
+                <f:content>
+                    <Label text="Tipo Ordine" required="true" />
+                    <Input id="tipoOrdineInput" value="{newOrder>/TipoOrdine}" />
+                    <Label text="Codice Cliente" required="true" />
+                    <Input id="codiceClienteInput" value="{newOrder>/CodiceCliente}" />
+                </f:content>
+            </f:SimpleForm>
+            <Table
+                id="itemsTable"
+                items="{newOrder>/ToItem}"
+                class="sapUiResponsiveMargin"
+                width="auto">
+                <headerToolbar>
+                    <Toolbar>
+                        <Title text="Items" level="H2"/>
+                        <ToolbarSpacer />
+                        <Button icon="sap-icon://add" tooltip="Add Item" press=".onAddItem" />
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column><Text text="Materiale" /></Column>
+                    <Column><Text text="Valore Netto" /></Column>
+                    <Column />
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Input value="{newOrder>Materiale}" />
+                            <Input value="{newOrder>ValoreNettoItem}" type="Number" />
+                            <Button icon="sap-icon://delete" tooltip="Delete Item" press=".onDeleteItem" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer/>
+                <Button text="Crea Ordine" type="Emphasized" press=".onCreateOrder"/>
+                <Button text="Annulla" press=".onNavBack"/>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>
